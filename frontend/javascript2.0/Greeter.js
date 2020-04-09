@@ -1,4 +1,5 @@
 var Greeter = /** @class */ (function () {
+
     function Greeter(message) {
         this.greeting = message;
     }
@@ -9,3 +10,4 @@ var Greeter = /** @class */ (function () {
 }());
 var greeter = new Greeter("world");
 console.log(greeter)
+// yash hu
