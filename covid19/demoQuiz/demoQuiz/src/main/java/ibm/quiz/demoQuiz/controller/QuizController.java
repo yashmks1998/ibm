@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import ibm.quiz.demoQuiz.entities.Questions;
-import ibm.quiz.demoQuiz.services.QuestionService;
+import ibm.quiz.demoQuiz.entities.Quiz;
+import ibm.quiz.demoQuiz.services.QuizService;
 
 
 
@@ -28,16 +29,16 @@ import ibm.quiz.demoQuiz.services.QuestionService;
 @CrossOrigin
 @RestController
 @RequestMapping(path="/api")
-public class QuestionController {
+public class QuizController {
 	
 	@Autowired
-	QuestionService questionService;
-	@PostMapping("/question")
-	public ResponseEntity<Void> addQuestion(@RequestBody Questions question){
+	QuizService quizService;
+	@PostMapping("/quiz")
+	public ResponseEntity<Void> addQuestion(@RequestBody Quiz quiz){
 		ResponseEntity<Void> re= null;
 		
 		try{
-			questionService.addQuestion(question);
+			quizService.addQuiz(quiz);
 			re = new ResponseEntity<>(HttpStatus.CREATED);;
 			
 		}
@@ -49,12 +50,16 @@ public class QuestionController {
 		return re;
 	}
 	
-	@GetMapping("/question")
-	public List<Questions> findEmployee(){
+	@GetMapping("/quiz")
+	public List<Quiz> findEmployee(){
 
-		List<Questions> questionss = questionService.fetchAllQuestions();
-		return questionss;
+		List<Quiz> quiz = quizService.fetchAllQuiz();
+		return quiz;
 	}
 //	
+	@GetMapping("/quiz/{name}")
+	public Quiz findQuizByName(@PathVariable("name") String name){
+		return quizService.findQuizByName(name);
+	}
 
 }

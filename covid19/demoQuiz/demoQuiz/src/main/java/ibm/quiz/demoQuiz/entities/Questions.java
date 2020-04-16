@@ -48,13 +48,13 @@ public class Questions {
 		this.name = name;
 	}
 
-	public int getQuestionTypeId() {
-		return questionTypeId;
-	}
-
-	public void setQuestionTypeId(int questionTypeId) {
-		this.questionTypeId = questionTypeId;
-	}
+//	public int getQuestionTypeId() {
+//		return questionTypeId;
+//	}
+//
+//	public void setQuestionTypeId(int questionTypeId) {
+//		this.questionTypeId = questionTypeId;
+//	}
 
 	public List<Options> getOption() {
 		return option;
@@ -64,11 +64,11 @@ public class Questions {
 		this.option = option;
 	}
 
-	public Questions(int id, String name, int questionTypeId, List<Options> option) {
+	public Questions(int id, String name, List<Options> option) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.questionTypeId = questionTypeId;
+//		this.questionTypeId = questionTypeId;
 		this.option = option;
 	
 	}
