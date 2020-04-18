@@ -1,0 +1,29 @@
+<p>quiz works!</p>
+<ul class="list-group">
+    <li class="list-group-item"  > 
+        <p >{{data}}
+             </p> 
+             <button class="btn btn-warning" (click)="Questionsss()"></button>
+             <div *ngFor="let employee1 of emp1">
+        <p class="list-group-item"  > 
+            {{employee1.name}}<button class="btn btn-warning" (click)="Optionsss(employee1.name)"></button> 
+        
+            <p class="list-group-item" *ngFor="let employee2 of emp2" >
+                {{employee2.name}}
+            
+        
+        
+            </div>        
+        
+
+        
+      
+        
+    </li>
+    
+   
+  </ul>
+
+<!-- </p><button class="btn btn-warning" (click)="Questionsss(employee.name)"> Edit </button>
+<p *ngFor="let employee1 of emp11">{{employee1.name}}</p><button class="btn btn-warning" (click)="Optionsss(employee.name)"> Edit </button>
+<p *ngFor="let employee2 of emp2">{{employee2.name}}-{{employee2.is_answer}}</p> -->
