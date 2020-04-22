@@ -16,33 +16,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   
-  emp: Array<Quizz> = []
-  constructor(private QuizService : QuzService,private router: Router) { }
+ 
+  
   title = 'Quiz';
   ngOnInit(): void {
-    
-    this.QuizService.fetchAllQuiz()
-    .subscribe((res:Array<Quizz>)=> {
-      console.log(res);
-      this.emp = res;
-     
-      
-      
-      
-     
-    
-      
-      
-    })
-   
+  
 
   }
-  quiza(employee:Quizz)
-  {
-console.log(employee);
-
-console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-this.router.navigate(['quiz',employee])
-
-  }
+ 
 }

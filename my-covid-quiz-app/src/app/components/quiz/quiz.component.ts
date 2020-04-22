@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output } from '@angular/core';
+import { Component, OnInit,Input,Output, NgModule } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { Quizz } from 'src/app/models/quizz';
@@ -7,6 +7,8 @@ import { Options } from 'src/app/models/options';
 import{ QuzService } from 'src/app/services/quz.service'
 import{AppComponent} from 'src/app/app.component'
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',

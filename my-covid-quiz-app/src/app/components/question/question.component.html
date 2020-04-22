@@ -1,1 +1,35 @@
-<p>question works!</p>
+<app-navbar></app-navbar>
+<div class="row" *ngIf="quizService.quest">
+    <div class="col s12 m6">
+        <span>TimeElapsed:{{quizService.displayTime()}}</span>
+    <div class="progress">
+      <div class="determinate" [style.width.%]="(quizService.qnProgress+1)*10"></div>
+  </div>
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{quizService.qnProgress+1}}</span>
+          <p>{{quizService.quest[quizService.qnProgress].name}}</p>
+        </div>
+        <div class="card-action">
+            <ng-container *ngFor ="let opt of quizService.quest[quizService.qnProgress].option;let i=index">
+          <a *ngIf="opt !=null" class="collection time" (click)="Answer(quizService.quest[quizService.qnProgress].id,i)">{{opt.name}}</a>
+        </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="waves-effect waves-light btn-large" (click)="back()" [disabled]="quizService.qnProgress==0">Back</button>
+  <button class="waves-effect waves-light btn-large" (click)="next()" >{{aa}}</button>
+  
+  <!-- <a class="waves-effect waves-light btn-large" [disabled]="quizService.qnProgress!=0">Next</a> -->
+
+  <!-- <div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
